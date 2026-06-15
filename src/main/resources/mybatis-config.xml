@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <environments default="development">
+
+        <environment id="development">
+
+            <transactionManager type="JDBC"/>
+
+            <dataSource type="POOLED">
+
+                <property name="driver"
+                          value="org.postgresql.Driver"/>
+
+                <property name="url"
+                          value="jdbc:postgresql://localhost:5432/bankatm"/>
+
+                <property name="username"
+                          value="postgres"/>
+
+                <property name="password"
+                          value="postgres"/>
+
+            </dataSource>
+
+        </environment>
+
+    </environments>
+
+    <mappers>
+        <mapper resource="mappers/UserMapper.xml"/>
+        <mapper resource="mappers/AccountMapper.xml"/>
+        <mapper resource="mappers/ATMCashMapper.xml"/>
+        <mapper resource="mappers/ExchangeRateMapper.xml"/>
+        <mapper resource="mappers/TransactionMapper.xml"/>
+    </mappers>
+
+</configuration>

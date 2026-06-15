@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bankATM.mapper.AccountMapper">
+
+    <select id="getBalance" resultType="java.math.BigDecimal">
+        SELECT balance
+        FROM accounts
+        WHERE id = #{id}
+    </select>
+
+    <select id="findByUserIdAndCurrency" resultType="bankATM.entity.Account">
+        SELECT *
+        FROM accounts
+        WHERE user_id = #{userId}
+        AND currency = #{currency}
+    </select>
+
+    <select id="findById" resultType="bankATM.entity.Account">
+        SELECT *
+        FROM accounts
+        WHERE id = #{id}
+    </select>
+
+    <select id="findByUserId"
+            resultType="bankATM.entity.Account">
+
+        SELECT *
+        FROM accounts
+        WHERE user_id = #{userId}
+
+    </select>
+
+    <update id="withdraw">
+        UPDATE accounts
+        SET balance = balance - #{amount}
+        WHERE id = #{id}
+    </update>
+
+    <update id="deposit">
+        UPDATE accounts
+        SET balance = balance + #{amount}
+        WHERE id = #{id}
+    </update>
+
+</mapper>

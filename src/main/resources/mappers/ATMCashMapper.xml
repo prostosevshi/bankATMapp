@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bankATM.mapper.ATMCashMapper">
+
+    <select id="getCashByCurrency" resultType="bankATM.entity.ATMCash">
+        SELECT * FROM atm_cash
+        WHERE currency = #{currency}
+        ORDER BY denomination DESC
+    </select>
+
+    <update id="decreaseCash">
+        UPDATE atm_cash
+        SET quantity = quantity - #{quantity}
+        WHERE id = #{id}
+    </update>
+
+    <update id="increaseCash">
+        UPDATE atm_cash
+        SET quantity = quantity + #{quantity}
+        WHERE id = #{id}
+    </update>
+
+</mapper>
