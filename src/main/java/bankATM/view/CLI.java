@@ -187,11 +187,12 @@ public class CLI {
                 System.out.println(
                         tx.getCreatedAt()
                                 + " | TRANSFER | "
-                                + tx.getAmount()
-                                + " "
-                                + tx.getFromCurrency()
-                                + " -> "
-                                + tx.getToCurrency()
+                                + "-" + tx.getAmount()
+                                + " " + tx.getFromCurrency()
+                                + " | "
+                                + tx.getFromAccountId()
+                                + " → "
+                                + tx.getToAccountId()
                 );
             }
             /*System.out.println(
@@ -267,6 +268,16 @@ public class CLI {
                         "!!Error: " + e.getMessage() + "!!"
                 );
                 System.out.println();
+            } catch (Exception e) {
+                System.out.println();
+                System.out.println(
+                        "!!Error: Incorrect input!!"
+                );
+                System.out.println(
+                        "!!Select the operation by choosing the number!!"
+                );
+                System.out.println();
+                scanner.nextLine();
             }
         }
     }
