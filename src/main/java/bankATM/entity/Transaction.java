@@ -14,11 +14,9 @@ public class Transaction {
 
     private BigDecimal amount;
 
-    // 💱 валюты отдельно — это правильно
     private String fromCurrency;
     private String toCurrency;
 
-    // 💰 курс (очень важно для аудита)
     private BigDecimal exchangeRate;
 
     private LocalDateTime createdAt;

@@ -64,7 +64,7 @@ public class TransferService {
                 );
 
                 if (rate == null) {
-                    throw new RuntimeException("No exchange rate");
+                    throw new ATMException("No exchange rate");
                 }
             }
 
@@ -76,7 +76,7 @@ public class TransferService {
             BigDecimal balance = accountMapper.getBalance(fromId);
 
             if (balance.compareTo(amount) < 0) {
-                throw new RuntimeException("Not enough money");
+                throw new ATMException("Not enough money");
             }
 
             // 4. withdraw + deposit
