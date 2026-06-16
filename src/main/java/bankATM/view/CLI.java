@@ -274,7 +274,7 @@ public class CLI {
                         "!!Error: Incorrect input!!"
                 );
                 System.out.println(
-                        "!!Select the operation by choosing the number!!"
+                        "!!Select the operation by choosing suggested number!!"
                 );
                 System.out.println();
                 scanner.nextLine();

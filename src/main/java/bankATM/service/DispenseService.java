@@ -45,6 +45,13 @@ public class DispenseService {
                 options.add(option2);
             }
 
+            DispenseOption option3 =
+                    buildOption(cashList, amount, 2);
+
+            if (option3 != null) {
+                options.add(option3);
+            }
+
             return options;
 
         } finally {
